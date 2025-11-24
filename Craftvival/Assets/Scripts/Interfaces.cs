@@ -5,13 +5,13 @@ public interface IDamageable
 
 public interface IEntity
 {
-    void SpawnConditions();
+    void Roam();
+
+    void Detect();
 }
 
 public interface IPassive
 {
-    void Roam();
-
     void Flee();
 }
 
