@@ -24,6 +24,7 @@ public class BaseEntity : MonoBehaviour, IDamageable
     // Basic variables
     public float health;
     public float speed;
+    public float sprintSpeed;
 
     // Variables for other stuff
     public bool canSeePlayer;
@@ -40,6 +41,10 @@ public class BaseEntity : MonoBehaviour, IDamageable
         playerLayer = LayerMask.GetMask("playerLayer");
         groundLayer = LayerMask.GetMask("groundLayer");
         objectLayer = LayerMask.GetMask("objectLayer");
+
+        health = entityStats.entityHealth;
+        speed = entityStats.roamSpeed;
+        sprintSpeed = entityStats.sprintSpeed;
 
         behaviour = GetComponent<IEntity>();
         vision = GetComponent<IDetect>();

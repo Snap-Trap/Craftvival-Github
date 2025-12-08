@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f3a767166ee0e049a3167d58c426e37, type: 3}
   m_Name: BobSO
   m_EditorClassIdentifier: 
-  health: 100
+  entityName: Bob
+  entityHealth: 100
   roamSpeed: 2
   sprintSpeed: 3.5
   visionRange: 8

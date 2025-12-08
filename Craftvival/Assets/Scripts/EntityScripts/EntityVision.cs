@@ -9,8 +9,6 @@ public class EntityVision : BaseEntity, IDetect, IEntity
     private BaseEntity parent;
     private BaseEntitySO entityStats;
 
-    public bool canSeePlayer;
-
     public void Initialize(BaseEntitySO entityData)
     {
         entityStats = entityData;
