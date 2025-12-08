@@ -5,28 +5,26 @@ public interface IDamageable
 
 public interface IEntity
 {
-    void Roam();
+    void Initialize(BaseEntitySO stats);
+}
 
+public interface IRoam
+{
+    void Roam();
+}
+
+public interface IDetect
+{
     void Detect();
+}
+
+public interface IAggressive
+{
+    void Chase();
+    void Attack();
 }
 
 public interface IPassive
 {
     void Flee();
-}
-
-public interface INeutral
-{
-    void Roam();
-
-    void Retaliate();
-}
-
-public interface IAggressive
-{
-    void Roam();
-
-    void Chase();
-
-    void Attack();
 }
