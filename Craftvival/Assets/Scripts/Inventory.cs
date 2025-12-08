@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    //creator: Tristan
+    //why do we have this?
     public class Item
     {
         public string itemName;
@@ -12,23 +14,32 @@ public class Inventory : MonoBehaviour
         public Sprite itemIcon;
     }
 
-    Dictionary<Item, int> inventory = new Dictionary<Item, int>();
+    private static Dictionary<ItemScriptableObject, int> inventory = new Dictionary<ItemScriptableObject, int>();
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    //just a simple debug to see what is currently in the inventory
+    private static void printInventory()
     {
         foreach (var entry in inventory)
         {
             Debug.Log(entry.Key + " " + entry.Value);
         }
     }
-
-    public void AddItem(Item item, int amount = 1)
+    //adds an item for the specified amount if its withing the max stack amount
+    public static void AddItem(ItemScriptableObject item, int amount = 1)
     {
-        if (!CanAddItem(item, amount))
+        int maxAdded = CanAddItem(item, amount);
+        if (maxAdded == 0)
         {
             Debug.Log("No more space for " + item.itemName);
             return;
+        }
+        else if( maxAdded != amount)
+        {
+            // drop the amount that cant be added
+            for(int i = amount - maxAdded; i > 0; i--)
+            {
+                //drop (to be made)
+            }
         }
 
         if (inventory.ContainsKey(item))
@@ -39,23 +50,25 @@ public class Inventory : MonoBehaviour
         {
             inventory[item] = 1;
         }
+        printInventory();
     }
 
-    private bool CanAddItem(Item item, int amount = 1)
+    private static int CanAddItem(ItemScriptableObject item, int amount = 1)
     {
-        if (inventory.ContainsKey(item) && inventory[item] >= 64)
+        //if current amount plus to be added is more than maxStack, then return amount that can be added, else return to be added amount
+        if (inventory.ContainsKey(item) && inventory[item] + amount > item.maxStack)
         {
-            return false;
+            return item.maxStack - inventory[item];
         }
-        return true;
+        return amount;
     }
 
-    public bool HasItem(Item item, int amount = 1)
+    public static bool HasItem(ItemScriptableObject item, int amount = 1)
     {
         return inventory.ContainsKey(item) && inventory[item] >= amount;
     }
 
-    public bool RemoveItem(Item item, int amount = 1)
+    public static bool RemoveItem(ItemScriptableObject item, int amount = 1)
     {
         if (!HasItem(item, amount))
         {
@@ -68,11 +81,5 @@ public class Inventory : MonoBehaviour
         }
         return true;
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
