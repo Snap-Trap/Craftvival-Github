@@ -6,12 +6,22 @@ public class DefaultVision : MonoBehaviour
 {
     public BaseEntitySO entityStats;
 
+    // Variables voor vision, zodat ik niet de SO gebruik en shit kan veranderen
+    // [Range(0, 360)] is voor max limiet
+
+    public float visionRange;
+    [Range(0, 360)]
+    public float coneAngle;
+
     public LayerMask playerLayer, objectLayer;
 
     public bool canSeePlayer;
 
     public void Awake()
     {
+        coneAngle = entityStats.coneAngle;
+        visionRange = entityStats.visionRange;
+
         StartCoroutine(VisionRoutine());
 
         playerLayer = LayerMask.GetMask("playerLayer");
@@ -34,7 +44,7 @@ public class DefaultVision : MonoBehaviour
     public void VisionCheck()
     {
         // Pakt alle colliders die op de "playerLayer" zit
-        Collider[] rangeChecks = Physics.OverlapSphere(transform.position, entityStats.visionRange, playerLayer);
+        Collider[] rangeChecks = Physics.OverlapSphere(transform.position, visionRange, playerLayer);
 
         // Als er NIET niks is, gaat ie verder. De player hoort als ENIGSTE op de playerLayer te zijn
         if (rangeChecks.Length != 0)
@@ -47,7 +57,7 @@ public class DefaultVision : MonoBehaviour
 
             // Pakt de Angle via WISKUNDE en doet het gedeeld door 2 want links + rechts = cone
             // Heeft 2 canSeePlayer = false nodig (IN DEZE BLOK) omdat de speler in de Angle kan zijn maar alsnog kan er een object tussen de player en entity zijn
-            if (Vector3.Angle(transform.position, directionTarget) < entityStats.coneAngle / 2)
+            if (Vector3.Angle(transform.forward, directionTarget) < coneAngle / 2)
             {
                 // Berekent de distance tussen zichzelf en de target, de target moet de player zijn
                 float distanceTarget = Vector3.Distance(transform.position, target.position);

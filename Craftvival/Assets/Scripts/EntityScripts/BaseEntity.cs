@@ -6,17 +6,9 @@ using UnityEngine.AI;
 public class BaseEntity : MonoBehaviour, IDamagable
 {
     public BaseEntitySO entityStats;
-    // References to the player needed for the agent component above :3
-    public Transform player;
-    public LayerMask playerLayer, groundLayer, objectLayer;
 
     // Basic variables
     public float health;
-    public float speed;
-    public float sprintSpeed;
-
-    // Variables for other stuff
-    public bool canSeePlayer;
 
     public void Awake()
     {

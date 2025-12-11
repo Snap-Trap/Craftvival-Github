@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4729036414235828828}
   - component: {fileID: 2810650796480380206}
   - component: {fileID: 4740944793273588044}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -107,7 +107,8 @@ GameObject:
   - component: {fileID: 983480820207082026}
   - component: {fileID: 8806523237681066248}
   - component: {fileID: 8438826856868131795}
-  m_Layer: 0
+  - component: {fileID: 6382516882334817173}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +162,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 23d654541e4275c429459e6a39ae4a9b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -354,3 +355,16 @@ MonoBehaviour:
   turn: {x: 0, y: 0}
   pitchMin: -30
   pitchMax: 30
+--- !u!114 &6382516882334817173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2406018287419526673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a96758d113d51e546b882ec8cb8b4214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100

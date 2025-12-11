@@ -21,6 +21,7 @@ public class DefaultRoam : MonoBehaviour
 
     public void Awake()
     {
+        // Finds things it need to find
         agent = GetComponent<NavMeshAgent>();
         agent.speed = entityStats.roamSpeed;
 

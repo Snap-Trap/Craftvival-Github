@@ -16,8 +16,8 @@ MonoBehaviour:
   entityHealth: 100
   roamSpeed: 3
   sprintSpeed: 4.5
-  visionRange: 8
-  coneAngle: 45
+  visionRange: 18
+  coneAngle: 70
   attackDamage: 0
   attackRange: 0
   attackCooldown: 0
