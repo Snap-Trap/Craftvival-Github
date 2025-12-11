@@ -16,10 +16,10 @@ MonoBehaviour:
   entityHealth: 100
   roamSpeed: 3
   sprintSpeed: 4.5
-  visionRange: 18
-  coneAngle: 70
+  visionRange: 12
+  coneAngle: 60
   attackDamage: 0
-  attackRange: 0
+  attackRange: 4
   attackCooldown: 0
   dropChance: 0
   dropItem: {fileID: 0}

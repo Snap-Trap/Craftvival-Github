@@ -23,18 +23,14 @@ public class DefaultRoam : MonoBehaviour
     {
         // Finds things it need to find
         agent = GetComponent<NavMeshAgent>();
-        agent.speed = entityStats.roamSpeed;
 
         whatIsGround = LayerMask.GetMask("groundLayer");
     }
 
-    public virtual void Update()
+    public void Roaming()
     {
-        Roaming();
-    }
-
-    private void Roaming()
-    {
+        // Sets the agent speed needs to be in the roaming function so it resets when switching states
+        agent.speed = entityStats.roamSpeed;
         // If the enemy doesn't have a walk point set, it will search for one
         if (!walkPointSet) SearchWalkPoint();
 
@@ -53,7 +49,7 @@ public class DefaultRoam : MonoBehaviour
             walkPointSet = false;
         }
     }
-    private void SearchWalkPoint()
+    public void SearchWalkPoint()
     {
         // Calculate random point in range
         float randomZ = Random.Range(-walkPointRange, walkPointRange);

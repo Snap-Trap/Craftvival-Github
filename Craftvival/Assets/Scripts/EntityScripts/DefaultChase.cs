@@ -1,11 +1,17 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
+// Creator: Luca
 public class DefaultChase : MonoBehaviour
 {
+    // Pakt de SO aan voor de stats
+    public BaseEntitySO entityStats;
+
+    // Component voor de NavMeshAgent
     public NavMeshAgent agent;
 
-    public Transform playerTransform;
+    private Transform playerTransform;
 
     public void Awake()
     {
@@ -13,13 +19,11 @@ public class DefaultChase : MonoBehaviour
         playerTransform = GameObject.Find("Player").transform;
     }
 
-    public void Update()
-    {
-        ChasePlayer();
-    }
-
     public void ChasePlayer()
     {
+        // Sets the agent speed needs to be in the roaming function so it resets when switching states
+        agent.speed = entityStats.sprintSpeed;
+
         agent.SetDestination(playerTransform.position);
     }
 }
