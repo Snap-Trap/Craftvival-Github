@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 1253644852}
   - component: {fileID: 1253644851}
   - component: {fileID: 1253644850}
+  - component: {fileID: 1253644854}
   - component: {fileID: 1253644853}
   m_Layer: 9
   m_Name: EnemyBob
@@ -360,26 +361,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f6c64879324104aad2e34142d2c51a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
-  entityStats: {fileID: 0}
-  player: {fileID: 0}
+  entityStats: {fileID: 11400000, guid: 6379e75b63f90ab4f956890cf18963b4, type: 2}
   playerLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  groundLayer:
     serializedVersion: 2
     m_Bits: 0
   objectLayer:
     serializedVersion: 2
     m_Bits: 0
-  health: 0
-  speed: 0
-  canSeePlayer: 0
-  randX: 0
-  randZ: 0
-  roamRadius: 7
-  currentPos: {x: 0, y: 0, z: 0}
-  nextPos: {x: 0, y: 0, z: 0}
   canSeePlayer: 0
 --- !u!114 &1253644851
 MonoBehaviour:
@@ -393,7 +381,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41971e116f3287f428877126a209df67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roamRadius: 7
+  entityStats: {fileID: 11400000, guid: 6379e75b63f90ab4f956890cf18963b4, type: 2}
+  agent: {fileID: 0}
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointRange: 7
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &1253644852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,7 +400,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ac798d238925f41bc58b5d76b634f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
   entityStats: {fileID: 11400000, guid: 6379e75b63f90ab4f956890cf18963b4, type: 2}
   player: {fileID: 0}
   playerLayer:
@@ -420,12 +413,8 @@ MonoBehaviour:
     m_Bits: 0
   health: 0
   speed: 0
+  sprintSpeed: 0
   canSeePlayer: 0
-  randX: 0
-  randZ: 0
-  roamRadius: 7
-  currentPos: {x: 0, y: 0, z: 0}
-  nextPos: {x: 0, y: 0, z: 0}
 --- !u!195 &1253644853
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -448,6 +437,21 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1253644854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253644845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f11d52f91ca27db4b9e459463971ef47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityStats: {fileID: 11400000, guid: 6379e75b63f90ab4f956890cf18963b4, type: 2}
+  attackCooldown: 1
+  canAttack: 0
 --- !u!1 &1348338317
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,7 +596,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 832
+    m_Bits: 320
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0

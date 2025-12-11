@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityName: Bob
   entityHealth: 100
-  roamSpeed: 2
-  sprintSpeed: 3.5
+  roamSpeed: 3
+  sprintSpeed: 4.5
   visionRange: 8
   coneAngle: 45
   attackDamage: 0

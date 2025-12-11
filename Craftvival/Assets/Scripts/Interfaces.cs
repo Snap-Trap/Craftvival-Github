@@ -1,4 +1,4 @@
-public interface IDamageable
+public interface IDamagable
 {
     void TakeDamage(float amount);
 }
@@ -6,16 +6,6 @@ public interface IDamageable
 public interface IEntity
 {
     void Initialize(BaseEntitySO stats);
-}
-
-public interface IRoam
-{
-    void Roam();
-}
-
-public interface IDetect
-{
-    void Detect();
 }
 
 public interface IAggressive
