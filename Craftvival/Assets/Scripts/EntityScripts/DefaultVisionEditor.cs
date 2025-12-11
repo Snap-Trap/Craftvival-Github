@@ -3,6 +3,8 @@ using UnityEngine;
 
 [CustomEditor(typeof(DefaultVision))]
 
+// Creator: Luca
+// L: Vraag me NIET waarom dit werkt, maar het werkt wel
 public class DefaultVisionEditor : Editor
 {
     private void OnSceneGUI()

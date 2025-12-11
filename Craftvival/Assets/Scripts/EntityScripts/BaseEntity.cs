@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.AI;
 
 // Creator: Luca
 public class BaseEntity : MonoBehaviour, IDamagable

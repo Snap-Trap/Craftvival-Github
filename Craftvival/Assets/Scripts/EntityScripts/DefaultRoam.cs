@@ -28,7 +28,7 @@ public class DefaultRoam : MonoBehaviour
         whatIsGround = LayerMask.GetMask("groundLayer");
     }
 
-    public void Update()
+    public virtual void Update()
     {
         Roaming();
     }
