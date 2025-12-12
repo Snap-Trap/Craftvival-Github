@@ -31,6 +31,7 @@ public class DefaultRoam : MonoBehaviour
     {
         // Sets the agent speed needs to be in the roaming function so it resets when switching states
         agent.speed = entityStats.roamSpeed;
+
         // If the enemy doesn't have a walk point set, it will search for one
         if (!walkPointSet) SearchWalkPoint();
 
@@ -57,7 +58,6 @@ public class DefaultRoam : MonoBehaviour
 
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-        // If the walk point is on the ground
         if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
         {
             walkPointSet = true;
