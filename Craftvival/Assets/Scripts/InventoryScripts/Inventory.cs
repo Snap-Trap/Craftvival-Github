@@ -24,7 +24,7 @@ public class Inventory : MonoBehaviour
             Debug.Log(entry.Key + " " + entry.Value);
         }
     }
-    //adds an item for the specified amount if its withing the max stack amount
+    //adds an item for the specified amount if its within the max stack amount
     public static void AddItem(ItemScriptableObject item, int amount = 1)
     {
         int maxAdded = CanAddItem(item, amount);
