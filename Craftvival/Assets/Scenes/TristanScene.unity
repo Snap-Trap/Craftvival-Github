@@ -1276,6 +1276,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624112307}
   m_CullTransparentMesh: 1
+--- !u!1 &1745614144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1745614146}
+  - component: {fileID: 1745614145}
+  m_Layer: 0
+  m_Name: InventoryUIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1745614145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745614144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 301d03d793024ad4b8f8c26cf295249b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggleAction:
+    m_Name: Toggle
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 5c7783da-95b7-4f64-83e1-19b10246f9bf
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: bdd86a4d-4087-479c-a7b3-8e33208f245f
+      m_Path: <Keyboard>/i
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Toggle
+      m_Flags: 0
+    m_Flags: 0
+  inventoryGrid: {fileID: 2090006980}
+--- !u!4 &1745614146
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745614144}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1756811763
 GameObject:
   m_ObjectHideFlags: 0
@@ -1513,9 +1575,8 @@ GameObject:
   - component: {fileID: 2090006982}
   - component: {fileID: 2090006981}
   - component: {fileID: 2090006980}
-  - component: {fileID: 2090006983}
   m_Layer: 5
-  m_Name: InventoryMenu
+  m_Name: ItemSlots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1612,47 +1673,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090006978}
   m_CullTransparentMesh: 1
---- !u!114 &2090006983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2090006978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 301d03d793024ad4b8f8c26cf295249b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toggleAction:
-    m_Name: Toggle
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: a87b387b-9444-4b71-9784-0b606d245f35
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: aab26e87-38eb-401f-a0fc-ed12ce8951cc
-      m_Path: <Keyboard>/i
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Toggle
-      m_Flags: 0
-    m_Flags: 0
-  inventoryCanvas: {fileID: 780478414}
-  inventorySlots:
-  - {fileID: 1851500388}
-  - {fileID: 1624112307}
-  - {fileID: 185495684}
-  - {fileID: 272030118}
-  - {fileID: 203446033}
-  - {fileID: 1388789235}
-  - {fileID: 744941740}
-  - {fileID: 631715254}
-  - {fileID: 1756811763}
-  - {fileID: 1842043252}
 --- !u!1 &2124512884
 GameObject:
   m_ObjectHideFlags: 0
@@ -1770,3 +1790,4 @@ SceneRoots:
   - {fileID: 2124512888}
   - {fileID: 1121815859}
   - {fileID: 780478415}
+  - {fileID: 1745614146}
