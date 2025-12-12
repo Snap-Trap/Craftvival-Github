@@ -25,6 +25,9 @@ public class DefaultEntityBehaviour : MonoBehaviour
         if (Dvision.canSeePlayer && !Dattack.inRange)
         {
             Dchase.ChasePlayer();
+        }
+        if (Dattack.canAttack)
+        {
             Dattack.AttackCheck();
         }
     }

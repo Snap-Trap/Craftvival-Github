@@ -29,8 +29,8 @@ public class DefaultAttack : MonoBehaviour
 
     public void AttackCheck()
     {
-        Debug.Log("Layermask for player is : " + playerLayer.value);
         // Range check
+        // Offset so the origin isn't inside the entity's own collider
         Vector3 offsetOrigin = transform.position + Vector3.forward * 1f;
         Vector3 playerDirection = (playerTransform.position - offsetOrigin).normalized;
         
