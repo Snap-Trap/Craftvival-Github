@@ -710,8 +710,46 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2406018287419526673, guid: 3827df57d3e36ce488be1378ef1ec266, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4223975081212234871}
   m_SourcePrefab: {fileID: 100100000, guid: 3827df57d3e36ce488be1378ef1ec266, type: 3}
+--- !u!1 &4223975081212234870 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2406018287419526673, guid: 3827df57d3e36ce488be1378ef1ec266, type: 3}
+  m_PrefabInstance: {fileID: 4223975081212234869}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4223975081212234871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4223975081212234870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49c65543b5fd9714ba40abb738894655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeAttackAction:
+    m_Name: Melee Attack
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 28d8f60a-6988-45ea-a9c7-dd249941e84c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 62dc59fc-eb19-41c2-8f38-796adf3f7490
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Melee Attack
+      m_Flags: 0
+    m_Flags: 0
+  playerAttackRange: 7
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
