@@ -517,10 +517,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyBob
       objectReference: {fileID: 0}
-    - target: {fileID: 7313976487905480249, guid: 6801676ba3337974b917588e87ebee45, type: 3}
-      propertyPath: walkPointRange
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 8440651119958541174, guid: 6801676ba3337974b917588e87ebee45, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

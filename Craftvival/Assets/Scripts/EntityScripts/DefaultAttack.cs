@@ -16,6 +16,7 @@ public class DefaultAttack : MonoBehaviour
     public Transform playerTransform;
     public LayerMask playerLayer;
 
+    // Necessary checks
     public bool canAttack;
     public bool inRange;
 
@@ -31,11 +32,14 @@ public class DefaultAttack : MonoBehaviour
     {
         // Range check
         // Offset so the origin isn't inside the entity's own collider
+        // Direction made so it can accurately check whether or not something is inbetween itself and the player
         Vector3 offsetOrigin = transform.position + Vector3.forward * 1f;
         Vector3 playerDirection = (playerTransform.position - offsetOrigin).normalized;
         
+        // playerLayer because I only need it to hit the player
         Physics.Raycast(offsetOrigin, playerDirection, out RaycastHit hit, entityStats.attackRange, playerLayer);
         
+        // Checks whether or not the collider hit
         if (hit.collider != null)
         {
             Debug.Log(gameObject.name + " is in range to hit " + hit.collider.gameObject.name);
@@ -48,6 +52,7 @@ public class DefaultAttack : MonoBehaviour
             return;
         }
 
+        // If conditions for attacking are met
         if (canAttack && inRange)
         {
             // This makes the agent stand still because it doesn't need to move

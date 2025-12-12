@@ -3,6 +3,7 @@ using UnityEngine;
 // Creator: Luca
 public class DefaultEntityBehaviour : MonoBehaviour
 {
+    // Reference to other scripts for behaviour
     public DefaultRoam Droam;
     public DefaultVision Dvision;
     public DefaultChase Dchase;
@@ -18,6 +19,8 @@ public class DefaultEntityBehaviour : MonoBehaviour
 
     public void Update()
     {
+        // State machine
+        // Holy fuck these few lines were so annoying to configure
         if (!Dvision.canSeePlayer && !Dattack.inRange)
         {
             Droam.Roaming();
@@ -26,6 +29,7 @@ public class DefaultEntityBehaviour : MonoBehaviour
         {
             Dchase.ChasePlayer();
         }
+        // God fucking dammit do NOT add another condition to the line below I swear to god I will actually kill you I'm not even joking
         if (Dattack.canAttack)
         {
             Dattack.AttackCheck();

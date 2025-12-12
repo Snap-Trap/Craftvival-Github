@@ -18,7 +18,7 @@ MonoBehaviour:
   sprintSpeed: 4.5
   visionRange: 12
   coneAngle: 60
-  attackDamage: 0
+  attackDamage: 30
   attackRange: 4
   attackCooldown: 1
   dropChance: 0
