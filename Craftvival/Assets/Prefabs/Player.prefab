@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 441963784082170309}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 8806523237681066248}
   - component: {fileID: 8438826856868131795}
   - component: {fileID: 6382516882334817173}
+  - component: {fileID: 1306460299083659069}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -368,3 +369,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+--- !u!114 &1306460299083659069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2406018287419526673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afedcf2433bf1840a1c0e10a12dedb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeAttackAction:
+    m_Name: Melee Attack
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: e20d5ee1-d8ee-4c1c-add4-92f69c41007a
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: a6e35dc2-472c-49d4-8d50-44383df5d6df
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Melee Attack
+      m_Flags: 0
+    m_Flags: 0
+  playerAttackRange: 12
+  playerDamage: 30
