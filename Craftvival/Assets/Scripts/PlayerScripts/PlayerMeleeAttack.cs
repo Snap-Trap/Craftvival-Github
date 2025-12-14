@@ -12,7 +12,7 @@ public class PlayerMeleeAttack : MonoBehaviour
     private LayerMask enemyLayer;
 
     private float attackCooldown = 1f;
-    private float playerDamage = 30f;
+    private float playerDamage = 50f;
     private bool canAttack = true;
 
     public void Awake()
@@ -20,7 +20,7 @@ public class PlayerMeleeAttack : MonoBehaviour
         enemyLayer = LayerMask.GetMask("enemyLayer");
     }
 
-    private void Update()
+    public void Update()
     {
         if (meleeAttackAction.triggered)
         {
@@ -34,7 +34,6 @@ public class PlayerMeleeAttack : MonoBehaviour
         if (canAttack)
         {
             Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, playerAttackRange, enemyLayer);
-            Debug.Log("Checks if it hit");
             if (hit.collider != null)
             {
                 Debug.Log(gameObject.name + " hit " + hit.collider.gameObject.name + " with a melee attack.");
