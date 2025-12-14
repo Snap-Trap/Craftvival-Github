@@ -12,14 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f3a767166ee0e049a3167d58c426e37, type: 3}
   m_Name: JeffreySO
   m_EditorClassIdentifier: 
-  entityName: Jeffrey
-  entityHealth: 150
+  health: 150
   roamSpeed: 1.5
-  sprintSpeed: 4.5
-  visionRange: 15
-  coneAngle: 90
-  attackDamage: 0
-  attackRange: 5
-  attackCooldown: 0
+  sprintSpeed: 3
+  visionRange: 10
+  attackDamage: 25
+  attackRange: 1.5
+  attackCooldown: 1
   dropChance: 0
   dropItem: {fileID: 0}
