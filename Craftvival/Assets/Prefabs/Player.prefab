@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 441963784082170309}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.7, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -108,7 +108,6 @@ GameObject:
   - component: {fileID: 8806523237681066248}
   - component: {fileID: 8438826856868131795}
   - component: {fileID: 6382516882334817173}
-  - component: {fileID: 5341255477461450517}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -334,7 +333,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   maxRayDistance: 1.2
-  speed: 7
+  speed: 3
   jumpForce: 5
   playerRotation: 0
   whatIsGround:
@@ -369,33 +368,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
---- !u!114 &5341255477461450517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2406018287419526673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49c65543b5fd9714ba40abb738894655, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meleeAttackAction:
-    m_Name: Melee Attack
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 28d8f60a-6988-45ea-a9c7-dd249941e84c
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 62dc59fc-eb19-41c2-8f38-796adf3f7490
-      m_Path: <Mouse>/leftButton
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Melee Attack
-      m_Flags: 0
-    m_Flags: 0
-  playerAttackRange: 12

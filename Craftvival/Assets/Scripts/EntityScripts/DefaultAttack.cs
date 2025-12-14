@@ -42,10 +42,12 @@ public class DefaultAttack : MonoBehaviour
         // Checks whether or not the collider hit
         if (hit.collider != null)
         {
+            Debug.Log(gameObject.name + " is in range to hit " + hit.collider.gameObject.name);
             inRange = true;
         }
         else
         {
+            Debug.Log(gameObject.name + " is NOT in range to hit the player.");
             inRange = false;
             return;
         }
