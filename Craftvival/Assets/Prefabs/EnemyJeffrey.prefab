@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ac798d238925f41bc58b5d76b634f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityStats: {fileID: 11400000, guid: 6379e75b63f90ab4f956890cf18963b4, type: 2}
+  entityStats: {fileID: 11400000, guid: 11e113cdf6164a64b9dd596d7e7284b3, type: 2}
   health: 0
   isDamaged: 0
 --- !u!114 &529981144163624950
@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41971e116f3287f428877126a209df67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityStats: {fileID: 11400000, guid: 6379e75b63f90ab4f956890cf18963b4, type: 2}
+  entityStats: {fileID: 11400000, guid: 11e113cdf6164a64b9dd596d7e7284b3, type: 2}
   agent: {fileID: 0}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 15
@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseEntity: {fileID: 0}
-  entityStats: {fileID: 0}
+  entityStats: {fileID: 11400000, guid: 11e113cdf6164a64b9dd596d7e7284b3, type: 2}
   agent: {fileID: 0}
 --- !u!195 &892090099242983429
 NavMeshAgent:
