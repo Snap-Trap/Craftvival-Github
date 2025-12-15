@@ -377,17 +377,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 977998844896202289, guid: 3827df57d3e36ce488be1378ef1ec266, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2406018287419526673, guid: 3827df57d3e36ce488be1378ef1ec266, type: 3}
       propertyPath: m_Name
-      value: Player (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4729036414235828828, guid: 3827df57d3e36ce488be1378ef1ec266, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.7
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5691184061477353998, guid: 3827df57d3e36ce488be1378ef1ec266, type: 3}
       propertyPath: m_LocalPosition.x
@@ -429,58 +421,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8806523237681066248, guid: 3827df57d3e36ce488be1378ef1ec266, type: 3}
-      propertyPath: speed
-      value: 7
+    - target: {fileID: 6846508917133320869, guid: 3827df57d3e36ce488be1378ef1ec266, type: 3}
+      propertyPath: bulletSpeed
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846508917133320869, guid: 3827df57d3e36ce488be1378ef1ec266, type: 3}
+      propertyPath: rangedAttackAction.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Mouse>/rightButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2406018287419526673, guid: 3827df57d3e36ce488be1378ef1ec266, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 968467255}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3827df57d3e36ce488be1378ef1ec266, type: 3}
 --- !u!4 &968467253 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5691184061477353998, guid: 3827df57d3e36ce488be1378ef1ec266, type: 3}
   m_PrefabInstance: {fileID: 968467252}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &968467254 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2406018287419526673, guid: 3827df57d3e36ce488be1378ef1ec266, type: 3}
-  m_PrefabInstance: {fileID: 968467252}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &968467255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 968467254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49c65543b5fd9714ba40abb738894655, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meleeAttackAction:
-    m_Name: Melee Attack
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 28d8f60a-6988-45ea-a9c7-dd249941e84c
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 62dc59fc-eb19-41c2-8f38-796adf3f7490
-      m_Path: <Mouse>/leftButton
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Melee Attack
-      m_Flags: 0
-    m_Flags: 0
-  playerAttackRange: 7
 --- !u!1 &1392192076
 GameObject:
   m_ObjectHideFlags: 0

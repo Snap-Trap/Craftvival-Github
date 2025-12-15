@@ -7,19 +7,24 @@ public class PlayerRangedAttack : MonoBehaviour
 {
     public InputAction rangedAttackAction;
 
-    public float rangedPower;
-    public float rangedDamage;
+    public float bulletSpeed;
 
     private float rangedCooldown = 1f;
-    private bool canAttack;
+    private bool canAttack = true;
 
-    private GameObject bulletPrefab;
-    public Rigidbody rb;
-    
+    public GameObject bulletPrefab;
+    private Transform firePoint;
+
+    public void Awake()
+    {
+        firePoint = transform.Find("PlayerFirepoint");
+    }
+
     public void Update()
     {
         if (rangedAttackAction.triggered)
         {
+            Debug.Log("Ranged attack triggered");
             RangedAttack();
         }
     }
@@ -28,9 +33,13 @@ public class PlayerRangedAttack : MonoBehaviour
     {
         if (canAttack)
         {
-            Rigidbody TempBullet = bulletPrefab;
-            Instantiate(TempBullet, transform.position, transform.rotation);
-            
+            GameObject TempBullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+
+            Rigidbody rigidBullet = TempBullet.GetComponent<Rigidbody>();
+
+            TempBullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
+
+            StartCoroutine(AttackCooldown());
         }
     }
 
@@ -40,5 +49,15 @@ public class PlayerRangedAttack : MonoBehaviour
         yield return new WaitForSeconds(rangedCooldown);
         Debug.Log(gameObject.name + " RANGED attack cooldown has ended");
         canAttack = true;
+    }
+
+    public void OnEnable()
+    {
+        rangedAttackAction.Enable();
+    }
+
+    public void OnDisable()
+    {
+        rangedAttackAction.Disable();
     }
 }
