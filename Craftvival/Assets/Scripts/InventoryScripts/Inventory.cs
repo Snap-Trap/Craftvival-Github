@@ -63,14 +63,19 @@ public class Inventory : MonoBehaviour
         return amount;
     }
 
-    public static bool HasItem(ItemScriptableObject item, int amount = 1)
+    //returns the amount of the specified item the player has in inventory
+    public static int GetItemAmount(ItemScriptableObject item)
     {
-        return inventory.ContainsKey(item) && inventory[item] >= amount;
+        if (inventory.ContainsKey(item))
+        {
+            return inventory[item];
+        }
+        return 0;
     }
 
     public static bool RemoveItem(ItemScriptableObject item, int amount = 1)
     {
-        if (!HasItem(item, amount))
+        if (GetItemAmount(item) > 0)
         {
             return false;
         }

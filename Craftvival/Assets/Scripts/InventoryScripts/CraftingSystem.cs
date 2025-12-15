@@ -5,10 +5,11 @@ public class CraftingSystem : MonoBehaviour
     //creator: Tristan
     public static bool CanCraft(CraftRecipeSO recipe)
     {
-        for (int i = 0; i < recipe.input.Count; i++)
+        foreach (CraftRecipeSO.Ingredient ingredient in recipe.input)
         {
-            if (!Inventory.HasItem(recipe.input[i].item, recipe.input[i].itemAmount))
+            if (Inventory.GetItemAmount(ingredient.item) > 0)
             {
+                //not enough of specific item
                 return false;
             }
         }
@@ -20,5 +21,13 @@ public class CraftingSystem : MonoBehaviour
         {
             return;
         }
+        //remove the ingredients
+        foreach (CraftRecipeSO.Ingredient ingredient in recipe.input)
+        {
+            Inventory.RemoveItem(ingredient.item, ingredient.itemAmount);
+        }
+
+        //add the crafted item to player
+        Inventory.AddItem(recipe.output.item, recipe.output.itemAmount);
     }
 }

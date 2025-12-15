@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bal
   m_EditorClassIdentifier: 
   itemName: Bal
-  itemType: 0
+  itemType: 4
   itemDescription: ROUND OBJECT
   itemIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   prefab: {fileID: 0}
