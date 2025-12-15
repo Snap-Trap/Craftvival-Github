@@ -108,7 +108,12 @@ GameObject:
   - component: {fileID: 8806523237681066248}
   - component: {fileID: 8438826856868131795}
   - component: {fileID: 6382516882334817173}
+<<<<<<< HEAD
   - component: {fileID: 1306460299083659069}
+=======
+  - component: {fileID: 3233075506387159102}
+  - component: {fileID: 6846508917133320869}
+>>>>>>> PlayerWeapon
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -130,6 +135,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4729036414235828828}
+  - {fileID: 63725949122887514}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1279673133945456448
@@ -369,7 +375,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+<<<<<<< HEAD
 --- !u!114 &1306460299083659069
+=======
+--- !u!114 &3233075506387159102
+>>>>>>> PlayerWeapon
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -398,5 +408,72 @@ MonoBehaviour:
       m_Action: Melee Attack
       m_Flags: 0
     m_Flags: 0
+<<<<<<< HEAD
   playerAttackRange: 12
   playerDamage: 30
+=======
+  playerAttackRange: 7
+--- !u!114 &6846508917133320869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2406018287419526673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86d0c8e42ee92940941d625fb888891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangedAttackAction:
+    m_Name: Ranged Attack
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 27a4e06f-ad26-412e-8a44-ba3de269523c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 3f2b6868-5f70-4674-9a5f-56233cd12e93
+      m_Path: <Mouse>/rightButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Ranged Attack
+      m_Flags: 0
+    m_Flags: 0
+  bulletSpeed: 50
+  rangedDamage: 0
+  bulletPrefab: {fileID: 9127847042928406943, guid: d2d6828e3033f9e41894e99acb252412, type: 3}
+--- !u!1 &2940150647768417968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 63725949122887514}
+  m_Layer: 7
+  m_Name: PlayerFirepoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &63725949122887514
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2940150647768417968}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.6, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5691184061477353998}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> PlayerWeapon
