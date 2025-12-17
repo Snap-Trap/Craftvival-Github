@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour, IDamagable
 
     public void Die()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Cursor.lockState = CursorLockMode.None;
+        SceneManager.LoadSceneAsync(2); // Loads the scene of the Death Screen
     }
 }
