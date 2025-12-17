@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerScript : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     public PlayerCamera playerCamera;
 
@@ -82,6 +82,11 @@ public class PlayerScript : MonoBehaviour
 
 
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down), Color.red, maxRayDistance);
+    }
+
+    public void TakeDamage(int amount)
+    {
+
     }
 
 

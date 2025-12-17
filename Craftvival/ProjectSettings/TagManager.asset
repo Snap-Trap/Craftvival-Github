@@ -15,8 +15,8 @@ TagManager:
   - playerLayer
   - objectLayer
   - enemyLayer
-  - 
-  - 
+  - FriendlyProjectileLayer
+  - EnemyProjectileLayer
   - 
   - 
   - 
