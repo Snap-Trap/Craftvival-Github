@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class InventoryUI : MonoBehaviour
 {
     //Creator: Luca
-    //Editor: Tristan
+    //Editor: Tristan (pretty much all the code written including comments is mine)
 
     // Simple toggle for the inventory UI, needs the Background to work
     public InputAction toggleAction;
@@ -18,10 +18,42 @@ public class InventoryUI : MonoBehaviour
     public GameObject itemSlotPrefab;
     public int horizontalCellCount;
 
+    public static Sprite nullIcon = null;
+
     private static Dictionary<GameObject, ItemScriptableObject> inventorySlots = new Dictionary<GameObject, ItemScriptableObject>();
     private static Dictionary<GameObject, ItemScriptableObject> hotbarSlots = new Dictionary<GameObject, ItemScriptableObject>();
 
     private static GameObject selectedSlot;
+
+    public static bool AddItemToUI(ItemScriptableObject addedItem) // returns false if there is no space in UI anymore
+    {
+        print("EnteredFunction");
+        //check for each slot if the itemslot already has an item attached to it
+        foreach (KeyValuePair<GameObject, ItemScriptableObject> itemSlot in inventorySlots)
+        {
+            if (itemSlot.Value == null)
+            {
+                print("FoundFreeSlot");
+                //if no item attached, then set it to the new item
+                inventorySlots[itemSlot.Key] = addedItem;
+                UpdateInventoryIcons();
+                return true;
+            }
+        }
+        //if no space in inventory, then check hotbar
+        foreach (KeyValuePair<GameObject, ItemScriptableObject> itemSlot in hotbarSlots)
+        {
+            if (itemSlot.Value == null)
+            {
+                //if no item attached, then set it to the new item
+                hotbarSlots[itemSlot.Key] = addedItem;
+                UpdateInventoryIcons();
+                return true;
+            }
+        }
+        //if no space in hotbar, return false
+        return false;
+    }
 
     private void Start()
     {
@@ -39,27 +71,27 @@ public class InventoryUI : MonoBehaviour
             {
                 //create a new cell for each horizontalCellCount
                 GameObject tempCell = Instantiate(itemSlotPrefab, child.transform);
-                tempCell.GetComponent<Button>().onClick.AddListener(() => { SelectSlot(tempCell); });
+                tempCell.GetComponent<Button>().onClick.AddListener(() => { NonStaticSelectSlot(tempCell); });
                 inventorySlots.Add(tempCell, null);
                 
             }
             
         }
 
-        //T: do the same for the hotbar slots (yes i know its double code in a way, ill fix it later)
+        //T: do the same for the hotbar slots
         for(int i = 0; i < hotbarBackground.transform.childCount; i++)
         {
             GameObject child = hotbarBackground.transform.GetChild(i).gameObject;
             for (int cellIndex = 0; cellIndex < horizontalCellCount; cellIndex++)
             {
                 GameObject tempCell = Instantiate(itemSlotPrefab, child.transform);
-                tempCell.GetComponent<Button>().onClick.AddListener(() => { SelectSlot(tempCell); });
+                tempCell.GetComponent<Button>().onClick.AddListener(() => { NonStaticSelectSlot(tempCell); });
                 hotbarSlots.Add(tempCell, null);
             }
         }
     }
 
-    public void Update()
+    private void Update()
     {
         // If toggleAction is pressed (this frame), toggle the inventory UI
         if (toggleAction.WasPressedThisFrame())
@@ -119,9 +151,37 @@ public class InventoryUI : MonoBehaviour
                     hotbarSlots[selectedSlot] = tempItem;
                 }
             }
+            UpdateInventoryIcons();
             selectedSlot = null;
         }
 
+    }
+
+    private static void UpdateInventoryIcons()
+    {
+        foreach (KeyValuePair<GameObject, ItemScriptableObject> itemSlot in inventorySlots)
+        {
+            if(itemSlot.Value != null)
+            {
+                itemSlot.Key.GetComponent<Image>().sprite = itemSlot.Value.itemIcon;
+            }
+            else
+            {
+                itemSlot.Key.GetComponent<Image>().sprite = nullIcon;
+            }
+
+        }
+        foreach (KeyValuePair<GameObject, ItemScriptableObject> itemSlot in hotbarSlots)
+        {
+            if (itemSlot.Value != null)
+            {
+                itemSlot.Key.GetComponent<Image>().sprite = itemSlot.Value.itemIcon;
+            }
+            else
+            {
+                itemSlot.Key.GetComponent<Image>().sprite = nullIcon;
+            }
+        }
     }
 
     public void OnEnable()

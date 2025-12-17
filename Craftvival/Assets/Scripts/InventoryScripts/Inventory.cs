@@ -48,7 +48,8 @@ public class Inventory : MonoBehaviour
         }
         else
         {
-            inventory[item] = 1;
+            inventory[item] = amount;
+            InventoryUI.AddItemToUI(item);
         }
         printInventory();
     }

@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Bal
   itemType: 4
   itemDescription: ROUND OBJECT
-  itemIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  itemIcon: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   prefab: {fileID: 0}
   maxStack: 1
