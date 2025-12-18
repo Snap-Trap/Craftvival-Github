@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -163,11 +164,12 @@ public class InventoryUI : MonoBehaviour
         {
             if(itemSlot.Value != null)
             {
-                itemSlot.Key.GetComponent<Image>().sprite = itemSlot.Value.itemIcon;
+                itemSlot.Key.transform.GetChild(0).GetComponent<Image>().sprite = itemSlot.Value.itemIcon;
+                itemSlot.Key.transform.GetChild(0).GetComponent<Image>().enabled = true;
             }
             else
             {
-                itemSlot.Key.GetComponent<Image>().sprite = nullIcon;
+                itemSlot.Key.transform.GetChild(0).GetComponent<Image>().enabled = false;
             }
 
         }
@@ -175,11 +177,12 @@ public class InventoryUI : MonoBehaviour
         {
             if (itemSlot.Value != null)
             {
-                itemSlot.Key.GetComponent<Image>().sprite = itemSlot.Value.itemIcon;
+                itemSlot.Key.transform.GetChild(0).GetComponent<Image>().sprite = itemSlot.Value.itemIcon;
+                itemSlot.Key.transform.GetChild(0).GetComponent<Image>().enabled = true;
             }
             else
             {
-                itemSlot.Key.GetComponent<Image>().sprite = nullIcon;
+                itemSlot.Key.transform.GetChild(0).GetComponent<Image>().enabled = false;
             }
         }
     }
