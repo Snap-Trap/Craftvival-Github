@@ -45,6 +45,8 @@ public class Inventory : MonoBehaviour
         if (inventory.ContainsKey(item))
         {
             inventory[item] += amount;
+            //update the inventory icons to show the correct item count
+            InventoryUI.UpdateInventoryIcons();
         }
         else
         {
@@ -76,7 +78,7 @@ public class Inventory : MonoBehaviour
 
     public static bool RemoveItem(ItemScriptableObject item, int amount = 1)
     {
-        if (GetItemAmount(item) > 0)
+        if (GetItemAmount(item) <= 0)
         {
             return false;
         }
