@@ -43,7 +43,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.35398123, g: 0.5584531, b: 0.7169812, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 8438826856868131795}
   - component: {fileID: 6382516882334817173}
   - component: {fileID: 1306460299083659069}
+  - component: {fileID: 7158736247346034131}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -400,3 +401,34 @@ MonoBehaviour:
     m_Flags: 0
   playerAttackRange: 12
   playerDamage: 30
+--- !u!114 &7158736247346034131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2406018287419526673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86d0c8e42ee92940941d625fb888891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangedAttackAction:
+    m_Name: Ranged Attack
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 2d8626ce-83f0-4d9b-baea-8488671432aa
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 24cbb275-eaf2-448c-9712-3205ad5bff6c
+      m_Path: <Mouse>/rightButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Ranged Attack
+      m_Flags: 0
+    m_Flags: 0
+  bulletSpeed: 3000
+  bulletPrefab: {fileID: 9127847042928406943, guid: d2d6828e3033f9e41894e99acb252412, type: 3}
