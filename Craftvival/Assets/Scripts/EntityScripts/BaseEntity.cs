@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 // Creator: Luca
@@ -9,6 +10,7 @@ public class BaseEntity : MonoBehaviour, IDamagable
     // Basic variables
     public float health;
     public bool isDamaged;
+    public List<GameObject> droppedItems;
 
     public void Awake()
     {
@@ -29,6 +31,17 @@ public class BaseEntity : MonoBehaviour, IDamagable
 
     public void Die()
     {
+        if(droppedItems != null && droppedItems.Count > 0)
+        {
+            foreach (GameObject item in droppedItems)
+            {
+                if (item != null)
+                {
+                    Instantiate(item, transform.position, Quaternion.identity);
+                    Debug.Log(gameObject.name + " dropped " + item.name);
+                }
+            }
+        }
         Destroy(gameObject);
     }
     

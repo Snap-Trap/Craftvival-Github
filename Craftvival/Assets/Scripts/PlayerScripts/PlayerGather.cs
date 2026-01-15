@@ -11,7 +11,7 @@ public class PlayerGather : MonoBehaviour
 
     private LayerMask objectLayer;
 
-    public float gatherCooldown = 1f; // Cooldown upon hitting correct target
+    public float gatherCooldown = 0.1f; // Cooldown upon hitting correct target
     public float resourceDamage = 1f;
     private bool canGather = true;
     public enum ToolType
@@ -74,7 +74,7 @@ public class PlayerGather : MonoBehaviour
                 foreach (var hit in hits)
                 {
                     // Check if the object has the correct tag based on the tool type
-                    if (targetTag == "All" || hit.collider.CompareTag(targetTag))
+                    if (targetTag == "All" || hit.collider.CompareTag("All") || hit.collider.CompareTag(targetTag))
                     {
                         Debug.Log(gameObject.name + " hit " + hit.collider.gameObject.name + " with a " + toolType);
                         hit.collider.gameObject.GetComponent<IDamagable>().TakeDamage(resourceDamage); // Deal damage to the resource

@@ -271,6 +271,8 @@ MonoBehaviour:
   entityStats: {fileID: 11400000, guid: 11e113cdf6164a64b9dd596d7e7284b3, type: 2}
   health: 0
   isDamaged: 0
+  droppedItems:
+  - {fileID: 3265061389531123030, guid: 161c771f6c768f649994f28234f72a78, type: 3}
 --- !u!114 &529981144163624950
 MonoBehaviour:
   m_ObjectHideFlags: 0

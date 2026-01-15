@@ -31,7 +31,7 @@ public class PlayerStatus : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
+
         // Lose food and water at the decay rate
         food -= foodDecayRate * Time.deltaTime;
         water -= waterDecayRate * Time.deltaTime;
@@ -52,5 +52,28 @@ public class PlayerStatus : MonoBehaviour
         healthBar.value = playerHealth.health / maxHealth;
         foodBar.value = food / maxFood;
         waterBar.value = water / maxWater;
+    }
+
+    public void AddStatus(int amount, string type)
+    {
+        switch (type)
+        {
+            case "Health":
+                // Adds health
+                playerHealth.health += amount;
+                break;
+            case "Food":
+                // Adds food
+                food += amount;
+                break;
+            case "Water":
+                // Adds water
+                water += amount;
+                break;
+            default:
+                // No matching type gives nothing
+                Debug.LogWarning("Don't recognise " + type);
+                break;
+        }
     }
 }

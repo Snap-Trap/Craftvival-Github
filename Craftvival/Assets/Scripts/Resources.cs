@@ -9,7 +9,16 @@ public class Resources : MonoBehaviour, IDamagable
     public List<GameObject> droppedItems;
 
     public void TakeDamage(float amount)
-    {
+    {   
+        if (gameObject.name == "Water")
+        {
+            PlayerStatus playerStatus = FindFirstObjectByType<PlayerStatus>();
+            if (playerStatus != null)
+            {
+                playerStatus.AddStatus(10, "Water");
+            }
+            return;  // Return early and skip the rest of the code
+        }
         durability -= amount;
         Debug.Log(gameObject.name + " lost " + amount + " durability");
         if (durability <= 0)
