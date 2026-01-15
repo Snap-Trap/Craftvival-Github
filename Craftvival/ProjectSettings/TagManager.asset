@@ -9,6 +9,7 @@ TagManager:
   - None
   - All
   - Any
+  - Food
   layers:
   - Default
   - TransparentFX

@@ -891,10 +891,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6382516882334817173, guid: bb0f8100bb6393a4fad722330467f1f3, type: 3}
+      propertyPath: health
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2406018287419526673, guid: bb0f8100bb6393a4fad722330467f1f3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1478622261}
     - targetCorrespondingSourceObject: {fileID: 2406018287419526673, guid: bb0f8100bb6393a4fad722330467f1f3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1478622252}
@@ -1708,6 +1715,37 @@ MonoBehaviour:
   resourceDamage: 1
   toolType: 3
   boxSize: {x: 0.5, y: 1, z: 1}
+--- !u!114 &1478622261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478622250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86d0c8e42ee92940941d625fb888891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangedAttackAction:
+    m_Name: Ranged Attack
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 5f2fbce3-dddd-4fb5-8dcd-ace92a70dec7
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 590eef1d-52c2-4b61-9127-0d1ca5e4c359
+      m_Path: <Mouse>/rightButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Ranged Attack
+      m_Flags: 0
+    m_Flags: 0
+  bulletSpeed: 1500
+  bulletPrefab: {fileID: 9127847042928406943, guid: d2d6828e3033f9e41894e99acb252412, type: 3}
 --- !u!1 &1485706782
 GameObject:
   m_ObjectHideFlags: 0
@@ -2597,6 +2635,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3265061389531123030, guid: 161c771f6c768f649994f28234f72a78, type: 3}
       propertyPath: m_Name
+      value: Food
+      objectReference: {fileID: 0}
+    - target: {fileID: 3265061389531123030, guid: 161c771f6c768f649994f28234f72a78, type: 3}
+      propertyPath: m_TagString
       value: Food
       objectReference: {fileID: 0}
     - target: {fileID: 8107519669747544896, guid: 161c771f6c768f649994f28234f72a78, type: 3}

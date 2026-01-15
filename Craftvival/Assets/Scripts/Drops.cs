@@ -19,7 +19,7 @@ public class Drops : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (gameObject.name == "Food")
+            if (gameObject.tag == "Food")
             {
                 PlayerStatus playerStatus = other.GetComponent<PlayerStatus>();
                 if (playerStatus != null)
