@@ -1018,6 +1018,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1478622251}
   m_SourcePrefab: {fileID: 100100000, guid: bb0f8100bb6393a4fad722330467f1f3, type: 3}
+--- !u!114 &729239741 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6382516882334817173, guid: bb0f8100bb6393a4fad722330467f1f3, type: 3}
+  m_PrefabInstance: {fileID: 729239740}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478622250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a96758d113d51e546b882ec8cb8b4214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &775132415
 GameObject:
   m_ObjectHideFlags: 0
@@ -2015,7 +2026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49a155e87584d7445a0fdb4472d8cdf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 729239741}
   maxHealth: 200
   maxFood: 200
   maxWater: 200
