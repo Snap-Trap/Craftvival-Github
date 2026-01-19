@@ -6,6 +6,7 @@ public class Resources : MonoBehaviour, IDamagable
 {
     // Script made by Charly
     public float durability = 5f;
+    public float waterAmount = 10f;
     public List<GameObject> droppedItems;
 
     public void TakeDamage(float amount)
@@ -15,7 +16,7 @@ public class Resources : MonoBehaviour, IDamagable
             PlayerStatus playerStatus = FindFirstObjectByType<PlayerStatus>();
             if (playerStatus != null)
             {
-                playerStatus.AddStatus(10, "Water");
+                playerStatus.AddStatus(waterAmount, "Water");
             }
             return;  // Return early and skip the rest of the code
         }

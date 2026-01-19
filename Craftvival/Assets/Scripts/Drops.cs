@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Drops : MonoBehaviour
 {
+    public float foodAmount = 10f;
     // Script made by Charly
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,7 +25,7 @@ public class Drops : MonoBehaviour
                 PlayerStatus playerStatus = other.GetComponent<PlayerStatus>();
                 if (playerStatus != null)
                 {
-                    playerStatus.AddStatus(10, "Food");
+                    playerStatus.AddStatus(foodAmount, "Food");
                 }
             }
             Destroy(gameObject);

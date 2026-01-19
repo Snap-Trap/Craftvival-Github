@@ -122,4 +122,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   durability: 1
+  waterAmount: 25
   droppedItems: []

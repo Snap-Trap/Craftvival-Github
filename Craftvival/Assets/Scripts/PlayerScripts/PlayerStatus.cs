@@ -54,7 +54,7 @@ public class PlayerStatus : MonoBehaviour
         waterBar.value = water / maxWater;
     }
 
-    public void AddStatus(int amount, string type)
+    public void AddStatus(float amount, string type)
     {
         switch (type)
         {
