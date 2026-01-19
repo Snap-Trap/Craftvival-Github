@@ -4,10 +4,13 @@ public enum BlockType
 {
     Nothing,
     Air,
-    Grass,
+    GrassDirt,
     Dirt,
+    GrassStone,
     Stone,
     Water,
-    Tree,
-    TreeLeafs
+    TreeTrunk,
+    TreeLeafsTransparent,
+    TreeLeafsSolid,
+    Sand
 }

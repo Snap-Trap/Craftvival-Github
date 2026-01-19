@@ -61,7 +61,7 @@ public class ChunkRenderer : MonoBehaviour
         meshCollider.sharedMesh = collisionMesh;
     }
 
-    public void UpdateChunk()
+    public void UpdateChunk(MeshData meshData)
     {
         RenderMesh(Chunk.GetChunkMeshData(ChunkData));
     }

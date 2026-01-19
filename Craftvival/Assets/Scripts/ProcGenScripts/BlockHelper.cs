@@ -7,6 +7,46 @@ public static class BlockHelper
         Direction.foreward, Direction.backwards, Direction.right, Direction.left, Direction.up, Direction.down 
     };
 
+    public static MeshData GetMeshData (ChunkData chunk, int x, int y, int z, MeshData meshData, BlockType blockType)
+    {
+        if (blockType == BlockType.Air || blockType == BlockType.Nothing)
+        {
+            return meshData;
+        }
+
+        foreach (Direction direction in directions)
+        {
+            var neighbourBlockCoordinates = new Vector3Int(x, y, z) + direction.GetVector();
+            var neighbourBlockType = Chunk.GetBlockFromChunkCoordinates(chunk, neighbourBlockCoordinates);
+
+            if (neighbourBlockType != BlockType.Nothing && BlockDataManager.blockTextureDataDictionary[neighbourBlockType].isSolid == false)
+            {
+                if (blockType == BlockType.Water)
+                {
+                    if (neighbourBlockType == BlockType.Air)
+                    {
+                        meshData.waterMesh = GetFaceDataIn(direction, chunk, x, y, z, meshData.waterMesh, blockType);
+                    }
+                }
+                else
+                {
+                    meshData = GetFaceDataIn(direction, chunk, x, y, z, meshData, blockType);
+                }
+            }
+        }
+
+        return meshData;
+    }
+
+    public static MeshData GetFaceDataIn(Direction direction, ChunkData chunk, int x, int y, int z, MeshData meshData, BlockType blockType)
+    {
+        GetFaceVertices(direction, x, y, z, meshData, blockType);
+        meshData.AddQuadTriangles(BlockDataManager.blockTextureDataDictionary[blockType].generatesCollider);
+        meshData.uv.AddRange(FaceUVs(direction, blockType));
+
+        return meshData;
+    }
+
     public static void GetFaceVertices(Direction direction, int x, int y, int z, MeshData meshData, BlockType blockType)
     {
         var generatesCollider = BlockDataManager.blockTextureDataDictionary[blockType].generatesCollider;
@@ -42,6 +82,14 @@ public static class BlockHelper
                 meshData.AddVertex(new Vector3(x - 0.5f, y + 0.5f, z - 0.5f), generatesCollider);
                 meshData.AddVertex(new Vector3(x + 0.5f, y + 0.5f, z - 0.5f), generatesCollider);
                 meshData.AddVertex(new Vector3(x + 0.5f, y + 0.5f, z + 0.5f), generatesCollider);
+                break;
+            case Direction.up:
+                meshData.AddVertex(new Vector3(x - 0.5f, y + 0.5f, z + 0.5f), generatesCollider);
+                meshData.AddVertex(new Vector3(x + 0.5f, y + 0.5f, z + 0.5f), generatesCollider);
+                meshData.AddVertex(new Vector3(x + 0.5f, y + 0.5f, z - 0.5f), generatesCollider);
+                meshData.AddVertex(new Vector3(x - 0.5f, y + 0.5f, z - 0.5f), generatesCollider);
+                break;
+            default:
                 break;
         }
     }

@@ -1,8 +1,8 @@
 using System;
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
-[CreateAssetMenu(fileName = "Block Data", menuName = "Data/Block Data")]
+[CreateAssetMenu(fileName ="Block Data" ,menuName ="Data/Block Data")]
 public class BlockDataSO : ScriptableObject
 {
     public float textureSizeX, textureSizeY;
@@ -17,3 +17,4 @@ public class TextureData
     public bool isSolid = true;
     public bool generatesCollider = true;
 }
+
