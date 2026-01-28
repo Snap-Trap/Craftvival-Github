@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58fc4044a55899e44a01144d267799aa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -273,6 +273,7 @@ MonoBehaviour:
   entityStats: {fileID: 11400000, guid: 6379e75b63f90ab4f956890cf18963b4, type: 2}
   health: 0
   isDamaged: 0
+  droppedItems: []
 --- !u!114 &1421316521746283709
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
     // Script made by Charly
     public void StartGame()
     {
-        SceneManager.LoadScene("CharlyScene");// Loads the scene of the main game
+        SceneManager.LoadScene("MainScene");// Loads the scene of the main game
     }
 
     public void ExitGame()
