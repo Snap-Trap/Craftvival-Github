@@ -9,7 +9,7 @@ public class PlayerRangedAttack : MonoBehaviour
 
     public float bulletSpeed;
 
-    private float rangedCooldown = 1f;
+    public float rangedCooldown = 1f;
     private bool canAttack = true;
 
     public GameObject bulletPrefab;

@@ -1682,6 +1682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   durability: 5
+  waterAmount: 10
   droppedItems: []
 --- !u!1 &1460678337
 GameObject:
@@ -1814,6 +1815,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   bulletSpeed: 1500
+  rangedCooldown: 0
   bulletPrefab: {fileID: 9127847042928406943, guid: d2d6828e3033f9e41894e99acb252412, type: 3}
 --- !u!1 &1485706782
 GameObject:
