@@ -8,7 +8,7 @@ public class ItemScriptableObject : ScriptableObject
     public ItemType itemType;
     public string itemDescription;
     public Sprite itemIcon;
-    public GameObject prefab;
+    public GameObject itemPrefab;
 
     public int maxStack = 1;
 

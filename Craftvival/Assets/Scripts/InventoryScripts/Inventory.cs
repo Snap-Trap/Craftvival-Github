@@ -11,7 +11,9 @@ public class Inventory : MonoBehaviour
         public string itemName;
         public string itemType;
         public string itemDescription;
+        public GameObject itemPrefab;
         public Sprite itemIcon;
+        public int maxStack;
     }
 
     private static Dictionary<ItemScriptableObject, int> inventory = new Dictionary<ItemScriptableObject, int>();
@@ -44,13 +46,13 @@ public class Inventory : MonoBehaviour
 
         if (inventory.ContainsKey(item))
         {
-            inventory[item] += amount;
+            inventory[item] += maxAdded;
             //update the inventory icons to show the correct item count
             InventoryUI.UpdateInventoryIcons();
         }
         else
         {
-            inventory[item] = amount;
+            inventory[item] = maxAdded;
             InventoryUI.AddItemToUI(item);
         }
         printInventory();
@@ -63,7 +65,10 @@ public class Inventory : MonoBehaviour
         {
             return item.maxStack - inventory[item];
         }
-        return amount;
+        else
+        {
+            return amount;
+        }
     }
 
     //returns the amount of the specified item the player has in inventory

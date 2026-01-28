@@ -26,6 +26,9 @@ public class InventoryUI : MonoBehaviour
     private static Dictionary<GameObject, ItemScriptableObject> inventorySlots = new Dictionary<GameObject, ItemScriptableObject>();
     private static Dictionary<GameObject, ItemScriptableObject> hotbarSlots = new Dictionary<GameObject, ItemScriptableObject>();
 
+    public static ItemScriptableObject equippedItem;
+    private static List<GameObject> hotbarSlotList = new List<GameObject>();
+
     private static GameObject selectedSlot;
 
     public static bool AddItemToUI(ItemScriptableObject addedItem) // returns false if there is no space in UI anymore
@@ -100,13 +103,13 @@ public class InventoryUI : MonoBehaviour
                 GameObject tempCell = Instantiate(itemSlotPrefab, child.transform);
                 tempCell.GetComponent<Button>().onClick.AddListener(() => { NonStaticSelectSlot(tempCell); });
                 inventorySlots.Add(tempCell, null);
-                
+
             }
-            
+
         }
 
         //T: do the same for the hotbar slots
-        for(int i = 0; i < hotbarBackground.transform.childCount; i++)
+        for (int i = 0; i < hotbarBackground.transform.childCount; i++)
         {
             GameObject child = hotbarBackground.transform.GetChild(i).gameObject;
             for (int cellIndex = 0; cellIndex < horizontalCellCount; cellIndex++)
@@ -114,6 +117,7 @@ public class InventoryUI : MonoBehaviour
                 GameObject tempCell = Instantiate(itemSlotPrefab, child.transform);
                 tempCell.GetComponent<Button>().onClick.AddListener(() => { NonStaticSelectSlot(tempCell); });
                 hotbarSlots.Add(tempCell, null);
+                hotbarSlotList.Add(tempCell);
             }
         }
         UpdateInventoryIcons();
@@ -127,6 +131,24 @@ public class InventoryUI : MonoBehaviour
             //T: if toggle button is pressed while ui is active, it disable the ui, if its inactive then it enables it 
             inventoryBackground.SetActive(!inventoryBackground.activeSelf);
             UpdateInventoryIcons();
+
+            if (Cursor.lockState == CursorLockMode.Locked)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Time.timeScale = 0f;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Time.timeScale = 1f;
+            }
+
+            if (Keyboard.current.digit1Key.wasPressedThisFrame)
+                EquipHotbarIndex(0);
+
+            if (Keyboard.current.digit2Key.wasPressedThisFrame)
+                EquipHotbarIndex(1);
+
         }
     }
 
@@ -155,7 +177,7 @@ public class InventoryUI : MonoBehaviour
             slot.GetComponent<Image>().color = new Color(1, 0.7f, 0.4f);
         }
         else
-        {            
+        {
             //else swap inventory values
             ItemScriptableObject tempItem;
             //check if the newly selected slot is from the inventory list
@@ -198,8 +220,36 @@ public class InventoryUI : MonoBehaviour
             selectedSlot.GetComponent<Image>().color = new Color(1, 0.7f, 0.4f);
             selectedSlot = null;
 
+            if (hotbarSlots.ContainsKey(slot))
+            {
+                EquipHotbarItem(slot);
+            }
         }
 
+    }
+
+    static void EquipHotbarIndex(int index)
+    {
+        if (index < 0 || index >= hotbarSlotList.Count)
+            return;
+
+        GameObject slot = hotbarSlotList[index];
+        EquipHotbarItem(slot);
+    }
+
+    private static void EquipHotbarItem(GameObject slot) 
+    {
+        ItemScriptableObject item = hotbarSlots[slot];
+
+        if (item == null)
+        {
+            equippedItem = null;
+            Debug.Log("Unequipped item");
+            return;
+        }
+
+        equippedItem = item;
+        Debug.Log("Equipped: " + item.name);
     }
 
     public static void UpdateInventoryIcons()
