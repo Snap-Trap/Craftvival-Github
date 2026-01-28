@@ -27,7 +27,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-
         // Makes it so the other script that controls the camera gives the rotation and you can use it here so forward goes forward based on--
         // what the player's forward is instead of the scene's forward
         // Touch this and I'll break your kneecaps
@@ -79,17 +78,8 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = false;
         }
-
-
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down), Color.red, maxRayDistance);
     }
-
-    public void TakeDamage(int amount)
-    {
-
-    }
-
-
     // Input System stuff
     private void OnEnable()
     {
